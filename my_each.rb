@@ -1,17 +1,14 @@
-def my_each # put argument(s) here
-  def my_each(arr)
-     i = 0
- 	  while i < arr.length
-    yield(arr[i])
-    i += 1
+def my_each(array)
+    if block_given?
+    i = 0
+
+    while i < array.length
+      yield(array[i])
+      i+= 1
+    end
+
+    array
+  else
+    "No block given"
   end
-  arr
-end
-
-# arr = [1,2,3,4]
-
-# my_each(arr) do |i|
-#   puts "#{i}"
-# end 
-
 end
